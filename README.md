@@ -1,4 +1,4 @@
-# JesseTeleprompter 法律页面
+# 爱拍提词器 / Aip Teleprompter 法律页面
 
 本仓库仅包含静态法律页面，不包含 App 源码或用户数据。
 
