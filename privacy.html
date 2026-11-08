@@ -7,22 +7,32 @@
   <title>爱拍提词器 隐私政策</title>
   <style>
     body{font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;max-width:760px;margin:auto;padding:24px;color:#222;background:#fff}
-    nav{margin-bottom:1rem}h1{font-size:1.7rem}h2{font-size:1.13rem;margin-top:1.7em}a{color:#b65316}small{color:#666}
+    code{overflow-wrap:anywhere}li{margin-bottom:1rem}nav{margin-bottom:1rem}h1{font-size:1.7rem}h2{font-size:1.13rem;margin-top:1.7em}a{color:#b65316}small{color:#666}
     @media(prefers-color-scheme:dark){body{color:#eee;background:#171719}a{color:#ffad70}small{color:#aaa}}
   </style>
 </head>
 <body>
   <nav aria-label="语言"><a href="privacy.html" hreflang="zh-CN" aria-current="page">简体中文</a> · <a href="privacy.zh-Hant.html" hreflang="zh-Hant">繁體中文</a> · <a href="privacy.en.html" hreflang="en">English</a></nav>
   <h1>爱拍提词器 隐私政策</h1>
-  <small>更新日期：2026 年 10 月 29 日</small>
+  <small>更新日期：2026 年 11 月 8 日</small>
   <p>本政策说明开发者 jessel 的爱拍提词器在 iPhone 和 iPad 上如何处理你的信息。App 无需注册账户，开发者目前不运营脚本或录像云端存储服务，也未集成广告、跨 App 跟踪或第三方分析 SDK。</p>
 
   <h2>本机内容与设备权限</h2>
   <p>你创建或导入的脚本、文件夹、提词设置和在 App 内录制的视频保存在设备上。相机和麦克风用于预览、录像及语音跟随；你可以在 iOS 设置中撤销权限。语音跟随要求设备端语音识别可用，不支持时该功能无法启动。悬浮提词会在系统允许的画中画或实时活动界面显示你选择的文字与控制信息。</p>
 
-  <h2>AI 服务</h2>
-  <p>配置 AI 服务并检测模型时，App 会把 API Key 作为认证信息发送给所选服务商，并发送模型查询请求；这一步不会发送脚本文稿。首次运行 AI 生成前，App 会显示服务商、固定接口域名和将发送的数据，并请你明确同意。你同意后，每次由你主动发起的生成请求都会把当前脚本全文、提示词、所选模型和 API Key 直接发送给该服务商；即使提示词没有引用正文，也会附上全文。请求还会带有服务运行所需的常规网络和请求元数据。你可以取消发送，也可在 AI 魔法页面撤销后续发送授权。API Key 保存在设备 Keychain；模型和连接状态保存在本机。开发者不接收这些 AI 请求，也不使用文稿进行广告或模型训练。</p>
-  <p>我们只接入公开 API 条款提供与本政策相当隐私保护的服务商：这些服务默认不使用 API 提示词和回答训练模型，并将请求内容的常规留存限制在安全与服务运营所需期限。App 目前只提供 OpenAI API、Anthropic Claude API 和阿里云百炼（Alibaba Cloud Model Studio / DashScope）的固定接口。根据服务商现行公开的 API 规则，这些服务默认不使用 API 提示词和回答训练其基础模型；各家通常会为安全、滥用监测或服务运行短期保留请求内容，默认期限和例外并不完全相同。OpenAI 与 Anthropic 的账户设置或用户主动提交反馈可能改变数据用途；法律、安全和服务政策执行也可能产生额外保留。阿里云百炼的默认提示词与回答留存期限不超过 30 天，法律或安全需要除外。请在使用前查看<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API 数据控制说明</a>、<a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">Anthropic API 训练说明</a>、<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic API 留存说明</a>、<a href="https://www.alibabacloud.com/help/en/model-studio/faq-about-alibaba-cloud-model-studio">阿里云百炼数据使用说明</a>和<a href="https://www.alibabacloud.com/help/en/model-studio/data-retention-policy">阿里云百炼留存政策</a>。服务商可能更新其规则；服务商收到的数据不受本机撤销操作影响。删除本机文稿不会删除已发送的数据；如需申请删除或停止未来请求，请按服务商政策管理你的服务商账户或 API Key。
+  <h2>可选 AI 服务：数据、接收方与用途</h2>
+  <p>AI 是可选功能。未经你允许，App 不会发起 AI 请求。检测模型或保存服务商连接时，会把 API Key 作为认证信息和模型列表查询发送给该服务商，以验证访问权限；不会发送文稿。生成或修改文稿时，会把当前脚本全文、你选择或输入的提示词、所选模型和 API Key 直接发送给该服务商，以生成结果预览；即使提示词未引用正文，也会附上全文。文稿或提示词中包含的个人信息也会一并发送。App 不会将录像、照片、联系人或麦克风音频附加到 AI 请求中。</p>
+  <p>这些 HTTPS 请求还会让服务商收到常规连接和请求信息，例如公网 IP 地址、请求时间及 API／客户端请求头。服务商可能通过 API Key 将请求关联到你的服务商账户，用于认证、计费、安全和防滥用。开发者不接收或中转 AI 请求，不出售这些内容，也不将其用于广告或模型训练。Key 存于设备 Keychain；模型、连接状态和授权记录存于本机。生成结果保持预览状态，直到你选择应用或复制。</p>
+  <h2>授权与选择</h2>
+  <p>连接服务商和生成内容前，App 内的确认页会说明接收方与固定接口、数据和用途，并提供该服务商的数据政策、服务条款及本政策链接。取消不会为该操作发出请求。授权适用于你随后主动发起、属于同一已告知服务的请求，不会自动开始生成。已告知的数据、接收方、用途或服务商政策信息发生实质变化时，会重新征求同意。你可以在 AI 服务商设置撤销连接授权，在 AI 魔法撤销内容发送授权；撤销后，后续请求须重新同意，但不会删除已发送的数据。撤销授权会保留 API Key 和模型选择。</p>
+  <h2>服务商与保护措施</h2>
+  <p>App 只使用下列固定 API 服务。我们要求接收方对共享的个人数据提供与本政策相同或同等的保护：仅用于已说明的服务及必要的安全或法律目的，保密并采取适当安全措施，限制访问，以及提供保留与删除控制。我们依据其公开 API 协议和数据政策核查这些保护。这不代表零留存承诺或另行签订的特殊协议。服务商账户设置、可选数据共享计划和法律或安全例外可能影响处理方式；发送敏感内容前请查看适用条款。</p>
+  <ul>
+    <li><strong>OpenAI API</strong> — <code>api.openai.com/v1</code>。API 内容默认不用于训练。标准防滥用日志可能包含内容，通常最多保留 30 天，存在例外；账户主动加入的计划及特定模型规则可能不同。参见<a href="https://developers.openai.com/api/docs/guides/your-data">API 数据控制说明</a>和<a href="https://openai.com/policies/business-terms/">服务协议</a>。</li>
+    <li><strong>Anthropic Claude API</strong> — <code>api.anthropic.com</code>。商业 API 条款禁止用客户内容训练。标准 API 输入与输出在 30 天内删除，合同、法律和安全要求除外；标记为违规的内容可能保留更久。主动提交反馈另有规则。参见<a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">API 训练说明</a>、<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">留存说明</a>和<a href="https://www.anthropic.com/legal/commercial-terms">商业条款</a>。</li>
+    <li><strong>阿里云百炼（Bailian / DashScope）</strong> — <code>dashscope.aliyuncs.com/compatible-mode/v1</code>，中国内地北京接口。中国站服务协议的签约方为通义云启（杭州）信息技术有限公司。其业务数据条款限定按服务指示和法律要求处理，禁止未经授权用于训练，并提供安全和删除保护。调用数据可能依法保存；中国站条款未承诺统一的 30 天上限。独立的 Token Plan／Coding Plan 计划具有不同条款。参见<a href="https://help.aliyun.com/zh/model-studio/privacy-notice">中国站隐私说明</a>和<a href="https://terms.alicdn.com/legal-agreement/terms/common_platform_service/20230728213935489/20230728213935489.html">服务协议</a>。</li>
+  </ul>
+  <p>服务商可能依其协议和基础设施安排在你所在国家或地区以外处理数据；服务可用范围和账户要求各有不同。App 不会替你加入可选训练或反馈计划。申请删除服务商持有的数据，请使用该服务商的账户控制或支持渠道；删除本机文稿或撤销 App 授权无法删除服务商副本。停止使用 AI 不影响本机编辑与提词。</p>
 
   <h2>局域网与购买</h2>
   <p>选择局域网主机、显示器或遥控器角色后，附近设备可能看到你的设备名称；建立连接后，App 会向已连接设备传送所选脚本、显示设置、播放进度或遥控指令。连接由系统的加密会话处理；请只连接你信任的设备。PRO 购买、续订和退款由 Apple 处理；App 通过 StoreKit 读取商品与已验证的购买权益，不获取你的完整银行卡资料。</p>

@@ -7,22 +7,32 @@
   <title>愛拍提詞器 私隱政策</title>
   <style>
     body{font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;max-width:760px;margin:auto;padding:24px;color:#222;background:#fff}
-    nav{margin-bottom:1rem}h1{font-size:1.7rem}h2{font-size:1.13rem;margin-top:1.7em}a{color:#b65316}small{color:#666}
+    code{overflow-wrap:anywhere}li{margin-bottom:1rem}nav{margin-bottom:1rem}h1{font-size:1.7rem}h2{font-size:1.13rem;margin-top:1.7em}a{color:#b65316}small{color:#666}
     @media(prefers-color-scheme:dark){body{color:#eee;background:#171719}a{color:#ffad70}small{color:#aaa}}
   </style>
 </head>
 <body>
   <nav aria-label="語言"><a href="privacy.html" hreflang="zh-CN">简体中文</a> · <a href="privacy.zh-Hant.html" hreflang="zh-Hant" aria-current="page">繁體中文</a> · <a href="privacy.en.html" hreflang="en">English</a></nav>
   <h1>愛拍提詞器 私隱政策</h1>
-  <small>更新日期：2026 年 10 月 29 日</small>
+  <small>更新日期：2026 年 11 月 8 日</small>
   <p>本政策說明開發者 jessel 的愛拍提詞器在 iPhone 和 iPad 上如何處理你的資料。App 無需註冊帳戶，開發者目前不運營腳本或錄影雲端存儲服務，也未集成廣告、跨 App 跟蹤或第三方分析 SDK。</p>
 
   <h2>本機內容與裝置權限</h2>
   <p>你創建或匯入的腳本、資料夾、提詞設定和在 App 內錄製的影片保存在裝置上。相機和麥克風用於預覽、錄影及語音跟隨；你可以在 iOS 設定中撤銷權限。語音跟隨要求裝置端語音識別可用，不支持時該功能無法啟動。懸浮提詞會在系統允許的畫中畫或實時活動界面顯示你選擇的文字與控制資料。</p>
 
-  <h2>AI 服務</h2>
-  <p>設定 AI 服務並檢測模型時，App 會將 API Key 作為驗證資料傳送給所選服務商，並傳送模型查詢請求；此步驟不會傳送腳本文稿。首次執行 AI 生成前，App 會顯示服務商、固定介面網域及將傳送的資料，並請你明確同意。你同意後，每次由你主動發起的生成請求都會將目前腳本全文、提示詞、所選模型和 API Key 直接傳送給該服務商；即使提示詞沒有引用正文，也會附上全文。請求亦會包含服務運作所需的一般網絡及請求中繼資料。你可以取消傳送，也可以在 AI 魔法頁面撤銷日後傳送的授權。API Key 保存在裝置 Keychain；模型和連線狀態保存在本機。開發者不會接收這些 AI 請求，也不會將文稿用於廣告或模型訓練。</p>
-  <p>我們只接入公開 API 條款提供與本政策相當私隱保障的服務商：這些服務預設不會使用 API 提示詞和回覆訓練模型，並將請求資料的一般保留限制在安全及服務運作所需期限。App 目前只提供 OpenAI API、Anthropic Claude API 和阿里雲百煉（Alibaba Cloud Model Studio / DashScope）的固定介面。根據服務商現行公開的 API 規則，這些服務預設不會使用 API 提示詞和回覆訓練其基礎模型；各家通常會為安全、濫用監測或服務運作而短期保留請求資料，預設期限及例外並不完全相同。OpenAI 與 Anthropic 的帳戶設定或使用者主動提交意見可能改變資料用途；法律、安全及服務政策執行亦可能導致額外保留。阿里雲百煉預設提示詞與回覆的保留期限不超過 30 天，法律或安全需要除外。使用前請查看<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API 資料控制說明</a>、<a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">Anthropic API 訓練說明</a>、<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic API 保留說明</a>、<a href="https://www.alibabacloud.com/help/en/model-studio/faq-about-alibaba-cloud-model-studio">阿里雲百煉資料使用說明</a>及<a href="https://www.alibabacloud.com/help/en/model-studio/data-retention-policy">阿里雲百煉保留政策</a>。服務商可能更新其規則；裝置上的撤銷操作不會影響服務商已收到的資料。刪除本機文稿不會刪除已傳送的資料；如需申請刪除或停止未來請求，請依服務商政策管理你的服務商帳戶或 API Key。</p>
+  <h2>可選 AI 服務：資料、接收方與用途</h2>
+  <p>AI 是可選功能。未經你允許，App 不會發起 AI 請求。檢測模型或儲存服務商連線時，會將 API Key 作為驗證資料和模型清單查詢傳送給該服務商，以驗證存取權限；不會傳送文稿。生成或修改文稿時，會將目前腳本全文、你選擇或輸入的提示詞、所選模型和 API Key 直接傳送給該服務商，以生成結果預覽；即使提示詞未引用正文，也會附上全文。文稿或提示詞中包含的個人資料也會一併傳送。App 不會將錄影、照片、聯絡人或麥克風音訊附加到 AI 請求中。</p>
+  <p>這些 HTTPS 請求亦會讓服務商收到一般連線及請求資料，例如公用 IP 位址、請求時間及 API／用戶端請求標頭。服務商可能透過 API Key 將請求連結至你的服務商帳戶，用於驗證、計費、安全和防濫用。開發者不接收或中轉 AI 請求，不出售這些內容，也不將其用於廣告或模型訓練。Key 存於裝置 Keychain；模型、連線狀態和授權記錄存於本機。生成結果保持預覽狀態，直到你選擇套用或複製。</p>
+  <h2>授權與選擇</h2>
+  <p>連接服務商和生成內容前，App 內的確認頁會說明接收方與固定介面、資料和用途，並提供該服務商的資料政策、服務條款及本政策連結。取消不會為該操作發出請求。授權適用於你隨後主動發起、屬於同一已告知服務的請求，不會自動開始生成。已告知的資料、接收方、用途或服務商政策資訊發生實質變更時，會重新徵求同意。你可以在 AI 服務商設定撤銷連線授權，在 AI 魔法撤銷內容傳送授權；撤銷後，後續請求須重新同意，但不會刪除已傳送的資料。撤銷授權會保留 API Key 和模型選擇。</p>
+  <h2>服務商與保護措施</h2>
+  <p>App 只使用下列固定 API 服務。我們要求接收方對共享的個人資料提供與本政策相同或同等的保護：僅用於已說明的服務及必要的安全或法律目的，保密並採取適當安全措施，限制存取，以及提供保留與刪除控制。我們依據其公開 API 協議和資料政策核查這些保護。這不代表零保留承諾或另行簽訂的特殊協議。服務商帳戶設定、可選資料共享計劃和法律或安全例外可能影響處理方式；傳送敏感內容前請查看適用條款。</p>
+  <ul>
+    <li><strong>OpenAI API</strong> — <code>api.openai.com/v1</code>。API 內容預設不用於訓練。標準防濫用記錄可能包含內容，通常最多保留 30 天，存在例外；帳戶主動加入的計劃及特定模型規則可能不同。參見<a href="https://developers.openai.com/api/docs/guides/your-data">API 資料控制說明</a>和<a href="https://openai.com/policies/business-terms/">服務協議</a>。</li>
+    <li><strong>Anthropic Claude API</strong> — <code>api.anthropic.com</code>。商業 API 條款禁止用客戶內容訓練。標準 API 輸入與輸出在 30 天內刪除，合約、法律和安全要求除外；標記為違規的內容可能保留更久。主動提交意見另有規則。參見<a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">API 訓練說明</a>、<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">保留說明</a>和<a href="https://www.anthropic.com/legal/commercial-terms">商業條款</a>。</li>
+    <li><strong>阿里雲百煉（Bailian / DashScope）</strong> — <code>dashscope.aliyuncs.com/compatible-mode/v1</code>，中國內地北京介面。中國站服務協議的簽約方為通义云启（杭州）信息技术有限公司。其業務資料條款限定按服務指示和法律要求處理，禁止未經授權用於訓練，並提供安全和刪除保護。調用資料可能依法保存；中國站條款未承諾統一的 30 天上限。獨立的 Token Plan／Coding Plan 計劃具有不同條款。參見<a href="https://help.aliyun.com/zh/model-studio/privacy-notice">中國站私隱說明</a>和<a href="https://terms.alicdn.com/legal-agreement/terms/common_platform_service/20230728213935489/20230728213935489.html">服務協議</a>。</li>
+  </ul>
+  <p>服務商可能依其協議和基礎設施安排在你所在國家或地區以外處理資料；服務可用範圍和帳戶要求各有不同。App 不會替你加入可選訓練或意見回饋計劃。申請刪除服務商持有的資料，請使用該服務商的帳戶控制或支援渠道；刪除本機文稿或撤銷 App 授權無法刪除服務商副本。停止使用 AI 不影響本機編輯與提詞。</p>
 
   <h2>局域網與購買</h2>
   <p>選擇局域網主機、顯示器或遙控器角色後，附近裝置可能看到你的裝置名稱；建立連接後，App 會向已連接裝置傳送所選腳本、顯示設定、播放進度或遙控指令。連接由系統的加密會話處理；請只連接你信任的裝置。PRO 購買、續訂和退款由 Apple 處理；App 通過 StoreKit 讀取商品與已驗證的購買權益，不獲取你的完整銀行卡資料。</p>
